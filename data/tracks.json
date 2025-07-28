@@ -1,0 +1,838 @@
+{
+  "bahrain": {
+    "name": "Bahrain International Circuit",
+    "location": "Sakhir, Bahrain",
+    "country": "Bahrain",
+    "lap_count": 57,
+    "lap_length_km": 5.412,
+    "circuit_type": "permanent",
+    "first_race": 2004,
+    "coordinates": {
+      "latitude": 26.0325,
+      "longitude": 50.5106
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.2,
+      "overtaking_difficulty": 1.3,
+      "tire_wear_factor": 1.1,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 3,
+      "elevation_change_m": 10
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 410,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 25.2,
+      "pit_window_optimal": [15, 45]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [25, 35],
+      "typical_track_temp_c": [35, 50],
+      "rain_probability": 0.05,
+      "wind_factor": 1.1
+    },
+    "safety_car_data": {
+      "historical_probability": 0.18,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Turn 1", "Turn 4", "Turn 8"]
+    }
+  },
+  "jeddah": {
+    "name": "Jeddah Corniche Circuit",
+    "location": "Jeddah, Saudi Arabia", 
+    "country": "Saudi Arabia",
+    "lap_count": 50,
+    "lap_length_km": 6.174,
+    "circuit_type": "street",
+    "first_race": 2021,
+    "coordinates": {
+      "latitude": 21.6319,
+      "longitude": 39.1044
+    },
+    "track_characteristics": {
+      "abrasiveness": 0.8,
+      "overtaking_difficulty": 1.8,
+      "tire_wear_factor": 0.9,
+      "fuel_consumption_type": "high_speed",
+      "drs_zones": 3,
+      "elevation_change_m": 15
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 320,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 26.5,
+      "pit_window_optimal": [12, 38]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [22, 32],
+      "typical_track_temp_c": [30, 45],
+      "rain_probability": 0.02,
+      "wind_factor": 1.2
+    },
+    "safety_car_data": {
+      "historical_probability": 0.35,
+      "avg_duration_laps": 6,
+      "common_incident_zones": ["Turn 1", "Turn 22", "Turn 27"]
+    }
+  },
+  "melbourne": {
+    "name": "Albert Park Circuit",
+    "location": "Melbourne, Australia",
+    "country": "Australia", 
+    "lap_count": 58,
+    "lap_length_km": 5.278,
+    "circuit_type": "semi_permanent",
+    "first_race": 1996,
+    "coordinates": {
+      "latitude": -37.8497,
+      "longitude": 144.9681
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.0,
+      "overtaking_difficulty": 1.5,
+      "tire_wear_factor": 1.0,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 8
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 365,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 24.8,
+      "pit_window_optimal": [18, 42]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [18, 28],
+      "typical_track_temp_c": [25, 40],
+      "rain_probability": 0.15,
+      "wind_factor": 1.0
+    },
+    "safety_car_data": {
+      "historical_probability": 0.22,
+      "avg_duration_laps": 5,
+      "common_incident_zones": ["Turn 1", "Turn 3", "Turn 9"]
+    }
+  },
+  "imola": {
+    "name": "Autodromo Enzo e Dino Ferrari",
+    "location": "Imola, Italy",
+    "country": "Italy",
+    "lap_count": 63,
+    "lap_length_km": 4.909,
+    "circuit_type": "permanent",
+    "first_race": 1980,
+    "coordinates": {
+      "latitude": 44.3439,
+      "longitude": 11.7167
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.1,
+      "overtaking_difficulty": 2.2,
+      "tire_wear_factor": 1.2,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 40
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 285,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 23.5,
+      "pit_window_optimal": [20, 45]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [15, 25],
+      "typical_track_temp_c": [20, 35],
+      "rain_probability": 0.12,
+      "wind_factor": 0.9
+    },
+    "safety_car_data": {
+      "historical_probability": 0.15,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Tamburello", "Villeneuve", "Turn 1"]
+    }
+  },
+  "miami": {
+    "name": "Miami International Autodrome",
+    "location": "Miami, Florida, USA",
+    "country": "United States",
+    "lap_count": 57,
+    "lap_length_km": 5.412,
+    "circuit_type": "street",
+    "first_race": 2022,
+    "coordinates": {
+      "latitude": 25.9581,
+      "longitude": -80.2389
+    },
+    "track_characteristics": {
+      "abrasiveness": 0.9,
+      "overtaking_difficulty": 1.6,
+      "tire_wear_factor": 0.95,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 3,
+      "elevation_change_m": 5
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 350,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 25.8,
+      "pit_window_optimal": [16, 42]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [25, 35],
+      "typical_track_temp_c": [35, 50],
+      "rain_probability": 0.25,
+      "wind_factor": 1.1
+    },
+    "safety_car_data": {
+      "historical_probability": 0.28,
+      "avg_duration_laps": 5,
+      "common_incident_zones": ["Turn 1", "Turn 11", "Turn 17"]
+    }
+  },
+  "monaco": {
+    "name": "Circuit de Monaco",
+    "location": "Monte Carlo, Monaco",
+    "country": "Monaco",
+    "lap_count": 78,
+    "lap_length_km": 3.337,
+    "circuit_type": "street",
+    "first_race": 1950,
+    "coordinates": {
+      "latitude": 43.7347,
+      "longitude": 7.4206
+    },
+    "track_characteristics": {
+      "abrasiveness": 0.7,
+      "overtaking_difficulty": 3.0,
+      "tire_wear_factor": 0.8,
+      "fuel_consumption_type": "low_speed",
+      "drs_zones": 1,
+      "elevation_change_m": 42
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 195,
+      "pit_lane_speed_limit_kmh": 60,
+      "estimated_time_loss_s": 28.5,
+      "pit_window_optimal": [25, 55]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [20, 28],
+      "typical_track_temp_c": [25, 40],
+      "rain_probability": 0.08,
+      "wind_factor": 0.8
+    },
+    "safety_car_data": {
+      "historical_probability": 0.42,
+      "avg_duration_laps": 7,
+      "common_incident_zones": ["Sainte Devote", "Nouvelle Chicane", "Rascasse"]
+    }
+  },
+  "spain": {
+    "name": "Circuit de Barcelona-Catalunya",
+    "location": "Barcelona, Spain",
+    "country": "Spain",
+    "lap_count": 66,
+    "lap_length_km": 4.675,
+    "circuit_type": "permanent",
+    "first_race": 1991,
+    "coordinates": {
+      "latitude": 41.5700,
+      "longitude": 2.2611
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.3,
+      "overtaking_difficulty": 2.0,
+      "tire_wear_factor": 1.4,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 30
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 325,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 24.2,
+      "pit_window_optimal": [20, 48]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [18, 28],
+      "typical_track_temp_c": [25, 45],
+      "rain_probability": 0.10,
+      "wind_factor": 1.0
+    },
+    "safety_car_data": {
+      "historical_probability": 0.12,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Turn 1", "Turn 5", "Turn 9"]
+    }
+  },
+  "canada": {
+    "name": "Circuit Gilles-Villeneuve",
+    "location": "Montreal, Canada",
+    "country": "Canada",
+    "lap_count": 70,
+    "lap_length_km": 4.361,
+    "circuit_type": "semi_permanent",
+    "first_race": 1978,
+    "coordinates": {
+      "latitude": 45.5000,
+      "longitude": -73.5225
+    },
+    "track_characteristics": {
+      "abrasiveness": 0.8,
+      "overtaking_difficulty": 1.2,
+      "tire_wear_factor": 0.9,
+      "fuel_consumption_type": "high_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 12
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 310,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 23.8,
+      "pit_window_optimal": [22, 52]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [18, 28],
+      "typical_track_temp_c": [25, 40],
+      "rain_probability": 0.18,
+      "wind_factor": 0.9
+    },
+    "safety_car_data": {
+      "historical_probability": 0.35,
+      "avg_duration_laps": 6,
+      "common_incident_zones": ["Turn 1", "Wall of Champions", "Hairpin"]
+    }
+  },
+  "austria": {
+    "name": "Red Bull Ring",
+    "location": "Spielberg, Austria",
+    "country": "Austria",
+    "lap_count": 71,
+    "lap_length_km": 4.318,
+    "circuit_type": "permanent",
+    "first_race": 1970,
+    "coordinates": {
+      "latitude": 47.2197,
+      "longitude": 14.7647
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.0,
+      "overtaking_difficulty": 1.1,
+      "tire_wear_factor": 1.0,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 3,
+      "elevation_change_m": 65
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 280,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 23.2,
+      "pit_window_optimal": [22, 52]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [15, 25],
+      "typical_track_temp_c": [20, 40],
+      "rain_probability": 0.20,
+      "wind_factor": 1.0
+    },
+    "safety_car_data": {
+      "historical_probability": 0.15,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Turn 1", "Turn 3", "Turn 4"]
+    }
+  },
+  "silverstone": {
+    "name": "Silverstone Circuit",
+    "location": "Silverstone, United Kingdom",
+    "country": "United Kingdom",
+    "lap_count": 52,
+    "lap_length_km": 5.891,
+    "circuit_type": "permanent",
+    "first_race": 1950,
+    "coordinates": {
+      "latitude": 52.0786,
+      "longitude": -1.0169
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.2,
+      "overtaking_difficulty": 1.3,
+      "tire_wear_factor": 1.3,
+      "fuel_consumption_type": "high_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 20
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 385,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 24.5,
+      "pit_window_optimal": [16, 38]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [15, 25],
+      "typical_track_temp_c": [20, 35],
+      "rain_probability": 0.25,
+      "wind_factor": 1.2
+    },
+    "safety_car_data": {
+      "historical_probability": 0.18,
+      "avg_duration_laps": 5,
+      "common_incident_zones": ["Turn 1", "Copse", "Stowe"]
+    }
+  },
+  "hungary": {
+    "name": "Hungaroring",
+    "location": "Budapest, Hungary",
+    "country": "Hungary",
+    "lap_count": 70,
+    "lap_length_km": 4.381,
+    "circuit_type": "permanent",
+    "first_race": 1986,
+    "coordinates": {
+      "latitude": 47.5789,
+      "longitude": 19.2486
+    },
+    "track_characteristics": {
+      "abrasiveness": 0.9,
+      "overtaking_difficulty": 2.5,
+      "tire_wear_factor": 1.1,
+      "fuel_consumption_type": "low_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 25
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 295,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 23.8,
+      "pit_window_optimal": [22, 52]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [20, 30],
+      "typical_track_temp_c": [30, 50],
+      "rain_probability": 0.15,
+      "wind_factor": 0.8
+    },
+    "safety_car_data": {
+      "historical_probability": 0.12,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Turn 1", "Turn 2", "Turn 12"]
+    }
+  },
+  "spa": {
+    "name": "Circuit de Spa-Francorchamps",
+    "location": "Spa, Belgium",
+    "country": "Belgium",
+    "lap_count": 44,
+    "lap_length_km": 7.004,
+    "circuit_type": "permanent",
+    "first_race": 1950,
+    "coordinates": {
+      "latitude": 50.4372,
+      "longitude": 5.9714
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.1,
+      "overtaking_difficulty": 1.0,
+      "tire_wear_factor": 1.2,
+      "fuel_consumption_type": "high_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 102
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 420,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 25.8,
+      "pit_window_optimal": [12, 32]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [12, 22],
+      "typical_track_temp_c": [18, 30],
+      "rain_probability": 0.35,
+      "wind_factor": 1.1
+    },
+    "safety_car_data": {
+      "historical_probability": 0.22,
+      "avg_duration_laps": 5,
+      "common_incident_zones": ["La Source", "Eau Rouge", "Blanchimont"]
+    }
+  },
+  "zandvoort": {
+    "name": "Circuit Zandvoort",
+    "location": "Zandvoort, Netherlands",
+    "country": "Netherlands",
+    "lap_count": 72,
+    "lap_length_km": 4.259,
+    "circuit_type": "permanent",
+    "first_race": 1952,
+    "coordinates": {
+      "latitude": 52.3886,
+      "longitude": 4.5411
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.0,
+      "overtaking_difficulty": 2.0,
+      "tire_wear_factor": 1.1,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 18
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 270,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 23.5,
+      "pit_window_optimal": [22, 55]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [15, 25],
+      "typical_track_temp_c": [20, 35],
+      "rain_probability": 0.20,
+      "wind_factor": 1.3
+    },
+    "safety_car_data": {
+      "historical_probability": 0.18,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Turn 1", "Turn 3", "Hugenholtzbocht"]
+    }
+  },
+  "monza": {
+    "name": "Autodromo Nazionale di Monza",
+    "location": "Monza, Italy",
+    "country": "Italy",
+    "lap_count": 53,
+    "lap_length_km": 5.793,
+    "circuit_type": "permanent",
+    "first_race": 1950,
+    "coordinates": {
+      "latitude": 45.6156,
+      "longitude": 9.2811
+    },
+    "track_characteristics": {
+      "abrasiveness": 0.8,
+      "overtaking_difficulty": 0.8,
+      "tire_wear_factor": 0.9,
+      "fuel_consumption_type": "high_speed",
+      "drs_zones": 3,
+      "elevation_change_m": 25
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 345,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 22.8,
+      "pit_window_optimal": [16, 40]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [18, 28],
+      "typical_track_temp_c": [25, 40],
+      "rain_probability": 0.12,
+      "wind_factor": 0.9
+    },
+    "safety_car_data": {
+      "historical_probability": 0.15,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Turn 1", "Lesmo", "Ascari"]
+    }
+  },
+  "singapore": {
+    "name": "Marina Bay Street Circuit",
+    "location": "Singapore",
+    "country": "Singapore",
+    "lap_count": 61,
+    "lap_length_km": 5.063,
+    "circuit_type": "street",
+    "first_race": 2008,
+    "coordinates": {
+      "latitude": 1.2914,
+      "longitude": 103.8640
+    },
+    "track_characteristics": {
+      "abrasiveness": 0.9,
+      "overtaking_difficulty": 2.2,
+      "tire_wear_factor": 1.0,
+      "fuel_consumption_type": "low_speed",
+      "drs_zones": 3,
+      "elevation_change_m": 8
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 315,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 26.2,
+      "pit_window_optimal": [18, 45]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [28, 35],
+      "typical_track_temp_c": [35, 50],
+      "rain_probability": 0.30,
+      "wind_factor": 0.8
+    },
+    "safety_car_data": {
+      "historical_probability": 0.45,
+      "avg_duration_laps": 7,
+      "common_incident_zones": ["Turn 1", "Turn 7", "Turn 18"]
+    }
+  },
+  "suzuka": {
+    "name": "Suzuka International Racing Course",
+    "location": "Suzuka, Japan",
+    "country": "Japan",
+    "lap_count": 53,
+    "lap_length_km": 5.807,
+    "circuit_type": "permanent",
+    "first_race": 1987,
+    "coordinates": {
+      "latitude": 34.8431,
+      "longitude": 136.5408
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.1,
+      "overtaking_difficulty": 1.7,
+      "tire_wear_factor": 1.2,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 45
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 405,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 25.5,
+      "pit_window_optimal": [16, 40]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [15, 25],
+      "typical_track_temp_c": [20, 35],
+      "rain_probability": 0.22,
+      "wind_factor": 1.0
+    },
+    "safety_car_data": {
+      "historical_probability": 0.20,
+      "avg_duration_laps": 5,
+      "common_incident_zones": ["Turn 1", "130R", "Chicane"]
+    }
+  },
+  "qatar": {
+    "name": "Losail International Circuit",
+    "location": "Lusail, Qatar",
+    "country": "Qatar",
+    "lap_count": 57,
+    "lap_length_km": 5.380,
+    "circuit_type": "permanent",
+    "first_race": 2021,
+    "coordinates": {
+      "latitude": 25.4900,
+      "longitude": 51.4542
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.3,
+      "overtaking_difficulty": 1.4,
+      "tire_wear_factor": 1.3,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 12
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 360,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 24.8,
+      "pit_window_optimal": [17, 42]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [25, 35],
+      "typical_track_temp_c": [30, 45],
+      "rain_probability": 0.02,
+      "wind_factor": 1.1
+    },
+    "safety_car_data": {
+      "historical_probability": 0.16,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Turn 1", "Turn 6", "Turn 14"]
+    }
+  },
+  "austin": {
+    "name": "Circuit of the Americas",
+    "location": "Austin, Texas, USA",
+    "country": "United States",
+    "lap_count": 56,
+    "lap_length_km": 5.513,
+    "circuit_type": "permanent",
+    "first_race": 2012,
+    "coordinates": {
+      "latitude": 30.1328,
+      "longitude": -97.6411
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.2,
+      "overtaking_difficulty": 1.3,
+      "tire_wear_factor": 1.2,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 40
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 380,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 24.9,
+      "pit_window_optimal": [17, 42]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [20, 30],
+      "typical_track_temp_c": [25, 45],
+      "rain_probability": 0.15,
+      "wind_factor": 1.0
+    },
+    "safety_car_data": {
+      "historical_probability": 0.20,
+      "avg_duration_laps": 5,
+      "common_incident_zones": ["Turn 1", "Turn 12", "Turn 19"]
+    }
+  },
+  "mexico": {
+    "name": "Autodromo Hermanos Rodriguez",
+    "location": "Mexico City, Mexico",
+    "country": "Mexico",
+    "lap_count": 71,
+    "lap_length_km": 4.304,
+    "circuit_type": "permanent",
+    "first_race": 1963,
+    "coordinates": {
+      "latitude": 19.4042,
+      "longitude": -99.0907
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.0,
+      "overtaking_difficulty": 1.2,
+      "tire_wear_factor": 1.0,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 3,
+      "elevation_change_m": 15
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 290,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 23.5,
+      "pit_window_optimal": [22, 52]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [18, 26],
+      "typical_track_temp_c": [25, 40],
+      "rain_probability": 0.10,
+      "wind_factor": 0.9
+    },
+    "safety_car_data": {
+      "historical_probability": 0.18,
+      "avg_duration_laps": 5,
+      "common_incident_zones": ["Turn 1", "Peraltada", "Stadium Section"]
+    }
+  },
+  "interlagos": {
+    "name": "Autodromo Jose Carlos Pace",
+    "location": "São Paulo, Brazil",
+    "country": "Brazil",
+    "lap_count": 71,
+    "lap_length_km": 4.309,
+    "circuit_type": "permanent",
+    "first_race": 1973,
+    "coordinates": {
+      "latitude": -23.7036,
+      "longitude": -46.6997
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.1,
+      "overtaking_difficulty": 1.3,
+      "tire_wear_factor": 1.1,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 40
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 295,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 23.8,
+      "pit_window_optimal": [22, 52]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [20, 30],
+      "typical_track_temp_c": [25, 45],
+      "rain_probability": 0.30,
+      "wind_factor": 1.0
+    },
+    "safety_car_data": {
+      "historical_probability": 0.25,
+      "avg_duration_laps": 6,
+      "common_incident_zones": ["Turn 1", "Senna S", "Juncao"]
+    }
+  },
+  "vegas": {
+    "name": "Las Vegas Strip Circuit",
+    "location": "Las Vegas, Nevada, USA",
+    "country": "United States",
+    "lap_count": 50,
+    "lap_length_km": 6.201,
+    "circuit_type": "street",
+    "first_race": 2023,
+    "coordinates": {
+      "latitude": 36.1147,
+      "longitude": -115.1728
+    },
+    "track_characteristics": {
+      "abrasiveness": 0.8,
+      "overtaking_difficulty": 1.4,
+      "tire_wear_factor": 0.9,
+      "fuel_consumption_type": "high_speed",
+      "drs_zones": 3,
+      "elevation_change_m": 8
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 350,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 26.0,
+      "pit_window_optimal": [12, 38]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [8, 18],
+      "typical_track_temp_c": [12, 25],
+      "rain_probability": 0.03,
+      "wind_factor": 0.9
+    },
+    "safety_car_data": {
+      "historical_probability": 0.30,
+      "avg_duration_laps": 6,
+      "common_incident_zones": ["Turn 1", "Turn 5", "Turn 14"]
+    }
+  },
+  "abu_dhabi": {
+    "name": "Yas Marina Circuit",
+    "location": "Abu Dhabi, UAE",
+    "country": "United Arab Emirates",
+    "lap_count": 58,
+    "lap_length_km": 5.281,
+    "circuit_type": "permanent",
+    "first_race": 2009,
+    "coordinates": {
+      "latitude": 24.4672,
+      "longitude": 54.6031
+    },
+    "track_characteristics": {
+      "abrasiveness": 1.0,
+      "overtaking_difficulty": 1.8,
+      "tire_wear_factor": 1.0,
+      "fuel_consumption_type": "medium_speed",
+      "drs_zones": 2,
+      "elevation_change_m": 10
+    },
+    "pit_stop_data": {
+      "pit_lane_length_m": 340,
+      "pit_lane_speed_limit_kmh": 80,
+      "estimated_time_loss_s": 24.5,
+      "pit_window_optimal": [18, 44]
+    },
+    "weather_patterns": {
+      "typical_air_temp_c": [25, 35],
+      "typical_track_temp_c": [30, 45],
+      "rain_probability": 0.05,
+      "wind_factor": 1.0
+    },
+    "safety_car_data": {
+      "historical_probability": 0.15,
+      "avg_duration_laps": 4,
+      "common_incident_zones": ["Turn 1", "Turn 6", "Turn 9"]
+    }
+  }
+}

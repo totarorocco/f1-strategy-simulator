@@ -1,0 +1,46 @@
+[global]
+# Development mode (set to false for production)
+developmentMode = false
+
+[server]
+# Server configuration
+port = 8501
+enableXsrfProtection = true
+maxUploadSize = 200
+
+# Performance settings
+maxMessageSize = 200
+enableWebsocketCompression = true
+
+[browser]
+# Browser settings
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501
+
+[theme]
+# Custom theme for F1 Strategy Simulator - Dark Mode
+primaryColor = "#FF1801"           # Ferrari Red for primary elements
+backgroundColor = "#0E1117"        # Dark background
+secondaryBackgroundColor = "#262730"  # Dark gray for sidebars
+textColor = "#FAFAFA"             # Light text
+
+# Font settings
+font = "sans serif"
+
+[client]
+# Client-side settings
+showErrorDetails = true
+toolbarMode = "viewer"
+
+[runner]
+# Performance and execution settings
+magicEnabled = true
+postScriptGC = true
+fastReruns = true
+
+[logger]
+# Logging configuration
+level = "info"
+messageFormat = "%(asctime)s %(message)s"
+
