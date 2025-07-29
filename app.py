@@ -43,27 +43,6 @@ def main() -> None:
     with st.sidebar:
         st.header("⚙️ Configuration")
         
-        # Race selection
-        try:
-            available_sessions = st.session_state.data_collector.get_available_sessions()
-            if available_sessions:
-                selected_session = st.selectbox(
-                    "Select Race Session",
-                    available_sessions,
-                    format_func=lambda x: f"{x.get('meeting_name', 'Unknown')} - {x.get('session_name', 'Unknown')}"
-                )
-            else:
-                st.warning("No live sessions available. Using demo mode.")
-                selected_session = None
-        except Exception as e:
-            st.warning(f"Unable to fetch live sessions: {str(e)}. Using demo mode.")
-            selected_session = None
-        
-        # Refresh settings
-        st.subheader("🔄 Live Updates")
-        auto_refresh = st.checkbox("Auto-refresh", value=True)
-        refresh_interval = st.slider("Refresh interval (seconds)", 5, 60, 10)
-        
         # Simulation parameters
         st.subheader("🎮 Simulation Parameters")
         num_simulations = st.slider("Number of simulations", 100, 2000, 1000)
@@ -74,13 +53,8 @@ def main() -> None:
         if st.button("🔄 Refresh Data"):
             st.rerun()
     
-    # Main content area
-    if selected_session:
-        # Live race mode
-        display_live_race(selected_session, num_simulations, consider_weather, safety_car_probability)
-    else:
-        # Demo mode
-        display_demo_mode()
+    # Main content area - Demo mode only
+    display_demo_mode()
     
     # Footer with credentials - Optimized for dark theme
     st.markdown("---")
@@ -100,187 +74,8 @@ def main() -> None:
         """,
         unsafe_allow_html=True
     )
-    
-    # Auto-refresh logic
-    if auto_refresh and selected_session:
-        time.sleep(refresh_interval)
-        st.rerun()
 
-def display_live_race(session: Dict[str, Any], num_simulations: int, 
-                     consider_weather: bool, safety_car_probability: float) -> None:
-    """
-    Display live race analysis interface with real-time data and strategy recommendations.
-    
-    Args:
-        session: Dictionary containing session information from OpenF1 API
-        num_simulations: Number of Monte Carlo simulations to run
-        consider_weather: Whether to include weather factors in simulations
-        safety_car_probability: Probability of safety car deployment (0.0-1.0)
-    """
-    
-    try:
-        # Update race state
-        race_data = st.session_state.data_collector.get_live_race_data(session['session_key'])
-        st.session_state.race_state.update(race_data)
-    except Exception as e:
-        st.error(f"Error fetching live race data: {str(e)}")
-        st.info("Switching to demo mode due to data fetch error.")
-        display_demo_mode()
-        return
-    
-    # Strategy recommendations first (most important)
-    st.subheader("🧠 Strategy Recommendations")
-    
-    with st.spinner("Running strategy simulations..."):
-        try:
-            strategies = st.session_state.strategy_simulator.simulate_strategies(
-                race_state=st.session_state.race_state,
-                num_simulations=num_simulations,
-                consider_weather=consider_weather,
-                safety_car_prob=safety_car_probability
-            )
-        except Exception as e:
-            st.error(f"Error running strategy simulations: {str(e)}")
-            strategies = []
-    
-    # Final Recommendation Section
-    if strategies:
-        best_strategy = strategies[0]
-        
-        # Create an eye-catching recommendation box
-        st.markdown("### 🏆 **FINAL RECOMMENDATION**")
-        
-        with st.container():
-            st.markdown(f"""
-            <div style="background-color: #0E1117; border: 2px solid #FF1801; border-radius: 10px; padding: 20px; margin: 10px 0;">
-                <h3 style="color: #FF1801; margin: 0 0 15px 0;">🎯 Optimal Strategy: {best_strategy['num_stops']}-Stop</h3>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <div>
-                        <strong>Expected Time:</strong> {best_strategy['total_time']:.1f}s advantage<br>
-                        <strong>Risk Level:</strong> {get_risk_description(best_strategy['risk_score'])}<br>
-                        <strong>Confidence:</strong> {best_strategy.get('confidence', 0.8):.0%}
-                    </div>
-                    <div>
-                        <strong>Tire Sequence:</strong> {' → '.join(best_strategy['tire_sequence'])}<br>
-                        <strong>Pit Laps:</strong> {', '.join(map(str, best_strategy['stop_laps'])) if best_strategy['stop_laps'] else 'No stops'}<br>
-                        <strong>Weather Adjusted:</strong> {'Yes' if best_strategy.get('weather_adjusted') else 'No'}
-                    </div>
-                </div>
-                <div style="background-color: #1E1E1E; padding: 10px; border-radius: 5px;">
-                    <strong>💡 Key Reasoning:</strong> {generate_strategy_reasoning(best_strategy, race_data, consider_weather, safety_car_probability)}
-                </div>
-                <div style="background-color: #1A4B8C; padding: 10px; border-radius: 5px; margin-top: 10px;">
-                    <strong>⏰ Next Action:</strong> {generate_next_action_recommendation(best_strategy, race_data)}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    # Current race info
-    st.subheader("📊 Race Status")
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.metric("Current Lap", f"{race_data.get('current_lap', 0)}/{race_data.get('total_laps', 0)}")
-    with col2:
-        st.metric("Laps Remaining", race_data.get('total_laps', 0) - race_data.get('current_lap', 0))
-    with col3:
-        weather_temp = race_data.get('weather', {}).get('track_temp', 'N/A')
-        st.metric("Track Temp", f"{weather_temp}°C" if weather_temp != 'N/A' else 'N/A')
-    with col4:
-        st.metric("Safety Car Risk", f"{safety_car_probability:.1%}")
-    
-    # Live positions table
-    st.subheader("🏁 Live Positions")
-    if 'positions' in race_data and race_data['positions']:
-        positions_df = pd.DataFrame(race_data['positions'])
-        st.dataframe(
-            positions_df[['position', 'driver_name', 'team', 'gap', 'tire_compound', 'tire_age']],
-            use_container_width=True,
-            hide_index=True
-        )
-    else:
-        st.info("Position data not available")
-    
-    # Driver-specific strategy analysis
-    st.subheader("👤 Driver-Specific Strategy Analysis")
-    
-    # Driver selection
-    available_drivers = []
-    if 'positions' in race_data and race_data['positions']:
-        available_drivers = [(pos.get('driver_name', f"Driver {pos.get('driver_number', '?')}"), 
-                            pos.get('driver_number', 0), pos) 
-                           for pos in race_data['positions']]
-        available_drivers.sort(key=lambda x: x[2].get('position', 99))
-    
-    if available_drivers:
-        selected_driver_info = st.selectbox(
-            "Select Driver for Personalized Strategy",
-            available_drivers,
-            format_func=lambda x: f"P{x[2].get('position', '?')} {x[0]} ({x[2].get('team', 'Unknown')})"
-        )
-        
-        if selected_driver_info:
-            driver_strategy = generate_driver_specific_strategy(
-                selected_driver_info[2], race_data, num_simulations, 
-                consider_weather, safety_car_probability
-            )
-            
-            if driver_strategy:
-                display_driver_strategy(selected_driver_info, driver_strategy, race_data)
-    else:
-        st.info("No driver data available for personalized analysis")
-    
-    # Alternative strategies comparison
-    if strategies and len(strategies) > 1:
-        st.subheader("📋 Alternative Strategies")
-        col1, col2, col3 = st.columns(3)
-        
-        for i, strategy in enumerate(strategies[1:4]):  # Show strategies 2-4
-            with [col1, col2, col3][i]:
-                st.metric(
-                    f"Alternative #{i+1}",
-                    f"+{strategy['total_time'] - strategies[0]['total_time']:.1f}s",
-                    f"Risk: {strategy['risk_score']:.1f}"
-                )
-                st.write(f"**Stops:** {strategy['num_stops']}")
-                st.write(f"**Tires:** {' → '.join(strategy['tire_sequence'])}")
-                if strategy['stop_laps']:
-                    st.write(f"**Stop laps:** {', '.join(map(str, strategy['stop_laps']))}")
-    
-    # Visualizations
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.subheader("📊 Strategy Timeline")
-        try:
-            if strategies:
-                fig_timeline = create_strategy_timeline(strategies[:5], race_data.get('total_laps', 70))
-                st.plotly_chart(fig_timeline, use_container_width=True)
-            else:
-                st.info("No strategy data available")
-        except Exception as e:
-            st.error(f"Error creating strategy timeline: {str(e)}")
-    
-    with col2:
-        st.subheader("🏎️ Position Chart")
-        try:
-            if 'positions' in race_data and race_data['positions']:
-                fig_positions = create_position_chart(race_data['positions'])
-                st.plotly_chart(fig_positions, use_container_width=True)
-            else:
-                st.info("No position data available")
-        except Exception as e:
-            st.error(f"Error creating position chart: {str(e)}")
-    
-    # Tire performance analysis
-    st.subheader("🏁 Tire Performance Analysis")
-    try:
-        if 'tire_data' in race_data and race_data['tire_data']:
-            fig_tire = create_tire_performance_chart(race_data['tire_data'])
-            st.plotly_chart(fig_tire, use_container_width=True)
-        else:
-            st.info("No tire data available")
-    except Exception as e:
-        st.error(f"Error creating tire performance chart: {str(e)}")
+
 
 def display_demo_mode() -> None:
     """
@@ -290,7 +85,7 @@ def display_demo_mode() -> None:
     for demonstration and development purposes.
     """
     
-    st.info("🔄 No live race session detected. Showing demo mode with 2024 season data.")
+    st.info("🎮 Demo Mode - Interactive F1 Strategy Simulator with 2024 season data")
     
     # Demo race selector - load all tracks from tracks.json
     demo_races = get_all_tracks_for_demo()

@@ -36,17 +36,7 @@ class WeatherData:
     rainfall: bool = False
     pressure: Optional[float] = None
 
-@dataclass
-class SessionInfo:
-    session_key: int
-    session_name: str
-    meeting_name: str
-    location: str
-    country_name: str
-    circuit_short_name: str
-    date_start: str
-    date_end: str
-    session_status: str
+
 
 class RaceState:
     """
@@ -56,10 +46,8 @@ class RaceState:
     
     def __init__(self):
         # Race session information
-        self.session_info: Optional[SessionInfo] = None
         self.current_lap: int = 0
         self.total_laps: int = 0
-        self.session_status: str = "unknown"
         self.race_start_time: Optional[datetime] = None
         
         # Driver data
@@ -104,17 +92,11 @@ class RaceState:
         """
         
         try:
-            # Update session information
-            if 'session_key' in live_data:
-                self._update_session_info(live_data)
-            
             # Update race progress
             if 'current_lap' in live_data:
                 self.current_lap = live_data['current_lap']
             if 'total_laps' in live_data:
                 self.total_laps = live_data['total_laps']
-            if 'session_status' in live_data:
-                self.session_status = live_data['session_status']
             
             # Update driver positions
             if 'positions' in live_data and live_data['positions']:
@@ -147,20 +129,7 @@ class RaceState:
             print(f"Error updating race state: {e}")
             return False
     
-    def _update_session_info(self, data: Dict[str, Any]) -> None:
-        """Update session information"""
-        
-        self.session_info = SessionInfo(
-            session_key=data.get('session_key', 0),
-            session_name=data.get('session_name', ''),
-            meeting_name=data.get('meeting_name', ''),
-            location=data.get('location', ''),
-            country_name=data.get('country_name', ''),
-            circuit_short_name=data.get('circuit_short_name', ''),
-            date_start=data.get('date_start', ''),
-            date_end=data.get('date_end', ''),
-            session_status=data.get('session_status', 'unknown')
-        )
+
     
     def _update_positions(self, positions_data: List[Dict[str, Any]]) -> None:
         """Update driver positions and information"""

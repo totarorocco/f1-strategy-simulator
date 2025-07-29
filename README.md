@@ -189,7 +189,7 @@ f1-strategy-simulator/
 
 ## 🏁 MVP Roadmap
 
-### Phase 1 (Weekend Sprint - 20 hours)
+### Phase 1
 **Must Have:**
 - [x] Live position tracking
 - [x] Basic tire degradation model
@@ -202,7 +202,7 @@ f1-strategy-simulator/
 - [ ] Advanced visualizations
 - [ ] Safety car predictions
 
-### Phase 2 (Future Enhancements)
+### Phase 2
 - [ ] Team-specific strategy customization
 - [ ] Driver skill factor integration
 - [ ] Fuel saving calculations
