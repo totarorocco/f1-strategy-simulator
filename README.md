@@ -12,9 +12,22 @@ Build a comprehensive F1 race strategy optimizer that works during live races, p
 
 ## ⚡ Quick Start
 
+### What Does It Do?
+The F1 Strategy Simulator is an interactive tool that analyzes Formula 1 race strategies using advanced Monte Carlo simulations. It helps you understand optimal pit stop timing, tire management, and race strategy decisions that teams make during Grand Prix events.
+
+**Key Features:**
+- 🧠 **Strategy Analysis**: Simulates 1000+ different race strategies to find the optimal approach
+- 🏎️ **Tire Management**: Models tire degradation and performance over race distance
+- 🌦️ **Weather Integration**: Considers weather impact on strategy decisions
+- 📊 **Interactive Visualizations**: Charts showing strategy timelines and performance comparisons
+- 🎯 **Driver-Specific Analysis**: Personalized strategy recommendations for individual drivers
+
+### How to Use It
+
+#### 1. Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/f1-strategy-simulator.git
+git clone https://github.com/totarorocco/f1-strategy-simulator.git
 cd f1-strategy-simulator
 
 # Install dependencies
@@ -24,25 +37,57 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+#### 2. Getting Started
+1. **Open the App**: Navigate to `http://localhost:8501` in your browser
+2. **Select a Track**: Choose from 24 F1 circuits (Monaco, Silverstone, Spa, etc.)
+3. **Configure Parameters**: Adjust simulation settings in the sidebar:
+   - Number of simulations (100-2000)
+   - Weather integration (on/off)
+   - Safety car probability (0-100%)
+4. **Analyze Strategies**: View optimal pit stop recommendations and alternative approaches
+
+#### 3. Understanding the Results
+- **🏆 Final Recommendation**: The best strategy with expected time advantage and risk level
+- **📊 Strategy Timeline**: Visual chart showing when to pit and which tires to use
+- **👤 Driver Analysis**: Select any driver for personalized strategy recommendations
+- **📈 Performance Metrics**: Track temperature, safety car risk, and race progress
+
+#### 4. Key Metrics Explained
+- **Risk Score**: 1-5 scale (1=conservative, 5=aggressive)
+- **Time Advantage**: Seconds gained/lost compared to baseline strategy
+- **Tire Sequence**: Recommended tire compounds and pit stop timing
+- **Confidence**: How reliable the strategy recommendation is (0-100%)
+
+### Example Use Case
+**Scenario**: You're watching the Monaco Grand Prix and want to understand if a driver should pit now or stay out longer.
+
+1. Select "Monaco" from the track dropdown
+2. Set current lap and conditions
+3. View the strategy timeline showing optimal pit windows
+4. Compare different approaches (1-stop vs 2-stop strategies)
+5. See the risk vs reward analysis for each option
+
+The simulator will show you exactly when the optimal pit stop should occur and why, helping you understand the complex strategy decisions that make F1 racing so fascinating!
+
 ## 🚀 Features
 
 ### Core Functionality
-- **Real-time Race Tracking**: Live position updates every 5 seconds during races
+- **Interactive Race Simulation**: Comprehensive strategy analysis for any F1 circuit
 - **Tire Degradation Modeling**: Advanced algorithms considering compound, temperature, and fuel load
 - **Monte Carlo Strategy Simulation**: 1000+ strategy combinations for optimal race planning
 - **Multi-stop Strategy Analysis**: 1-stop, 2-stop, and 3-stop strategy comparisons
-- **Weather Integration**: Real-time weather impact on strategy decisions
+- **Weather Integration**: Weather impact modeling on strategy decisions
 
 ### Visualizations
 - Interactive strategy timeline showing tire strategies
-- Live gap charts between drivers
+- Driver position and gap analysis
 - Tire performance degradation graphs
-- Pit window predictions for next 10 laps
-- Historical track-specific analysis
+- Pit window predictions and optimal timing
+- Track-specific strategy patterns
 
 ### Intelligence Features
 - Safety car probability modeling
-- Risk factor assessment
+- Risk factor assessment and reward analysis
 - Track-specific winning pattern analysis
 - Weather-adjusted strategy recommendations
 
@@ -57,13 +102,13 @@ streamlit run app.py
 
 ## 📊 API Integration
 
-### OpenF1 API (Real-time Data)
+### OpenF1 API (Historical Data)
 ```
 Base URL: https://api.openf1.org/v1/
 Endpoints:
-- /sessions - Current session information
+- /sessions - Session information
 - /drivers - Driver details
-- /position - Real-time positions
+- /position - Position data
 - /car_data - Telemetry data
 - /pit - Pit stop information
 - /stints - Tire stint data
@@ -168,7 +213,7 @@ f1-strategy-simulator/
 }
 ```
 
-### Live Race State
+### Race State
 ```python
 {
     'lap': int,
@@ -184,23 +229,23 @@ f1-strategy-simulator/
 
 - **Prediction Accuracy**: 70%+ correct pit stop predictions within 3-lap window
 - **Performance**: Strategy generation within 2 seconds
-- **Reliability**: Real-time updates without lag
+- **Reliability**: Fast strategy generation and analysis
 - **Validation**: Strategies match actual winning approaches
 
 ## 🏁 MVP Roadmap
 
-### Phase 1
+### Phase 1 ✅ COMPLETED
 **Must Have:**
-- [x] Live position tracking
+- [x] Interactive race simulation
 - [x] Basic tire degradation model
-- [x] Simple strategy simulator (100 simulations)
+- [x] Strategy simulator (1000+ simulations)
 - [x] Core visualization (strategy timeline)
 
 **Nice to Have:**
-- [ ] Weather integration
-- [ ] Historical analysis dashboard
-- [ ] Advanced visualizations
-- [ ] Safety car predictions
+- [x] Weather integration
+- [x] Track-specific analysis
+- [x] Advanced visualizations
+- [x] Safety car predictions
 
 ### Phase 2
 - [ ] Team-specific strategy customization
@@ -239,17 +284,17 @@ The application will be available at `http://localhost:8501`
 
 ## 📊 Usage Examples
 
-### Live Race Analysis
-1. Select current race from dropdown
-2. Monitor real-time positions and tire data
-3. View strategy recommendations
-4. Compare with actual team decisions
+### Race Strategy Analysis
+1. Select a track from the dropdown (24 F1 circuits available)
+2. Configure simulation parameters and conditions
+3. View optimal strategy recommendations
+4. Compare different approaches and analyze trade-offs
 
-### Historical Analysis
-1. Choose past race from archive
-2. Analyze winning strategies
+### Track-Specific Analysis
+1. Choose any F1 circuit from the selection
+2. Analyze optimal strategies for that track
 3. Compare different approach outcomes
-4. Study track-specific patterns
+4. Study track-specific patterns and characteristics
 
 ## 🤝 Contributing
 
@@ -263,11 +308,11 @@ Contributions are welcome! Please read our contributing guidelines:
 
 ## 📝 Development Notes
 
-- Start with hardcoded 2024 season data for testing
-- Implement aggressive caching to minimize API calls
-- Include graceful degradation for API downtime
-- Focus on clear visualizations over complex algorithms initially
-- Design for F1 fans, not just technical users
+- Built with 2024 season data and track characteristics
+- Implements aggressive caching to minimize API calls
+- Includes graceful degradation for API downtime
+- Focuses on clear visualizations and user-friendly interface
+- Designed for F1 fans and strategy enthusiasts
 
 ## 📄 License
 
@@ -285,7 +330,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Rocco Totaro** - [rt2959@columbia.edu](mailto:rt2959@columbia.edu)
 
-Project Link: [https://github.com/yourusername/f1-strategy-simulator](https://github.com/yourusername/f1-strategy-simulator)
+Project Link: [https://github.com/totarorocco/f1-strategy-simulator](https://github.com/totarorocco/f1-strategy-simulator)
 
 ---
 
