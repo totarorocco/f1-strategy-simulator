@@ -82,19 +82,19 @@ def main() -> None:
         # Demo mode
         display_demo_mode()
     
-    # Footer with credentials
+    # Footer with credentials - Optimized for dark theme
     st.markdown("---")
     st.markdown(
         """
-        <div style="text-align: center; padding: 20px; background-color: rgba(255, 24, 1, 0.1); border-radius: 10px; margin-top: 40px;">
-            <p style="margin: 0; font-size: 14px; color: #666;">
-                <strong>F1 Strategy Simulator</strong> | Built with ❤️ for Formula 1 fans and data enthusiasts
+        <div style="text-align: center; padding: 20px; background-color: rgba(255, 24, 1, 0.08); border: 1px solid rgba(255, 24, 1, 0.2); border-radius: 12px; margin-top: 40px; backdrop-filter: blur(10px);">
+            <p style="margin: 0; font-size: 14px; color: #E0E0E0; font-weight: 500;">
+                <strong style="color: #FFFFFF;">F1 Strategy Simulator</strong> | Built with ❤️ for Formula 1 fans and data enthusiasts
             </p>
-            <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">
-                <strong>Rocco Totaro</strong> - <a href="mailto:rt2959@columbia.edu" style="color: #FF1801;">rt2959@columbia.edu</a>
+            <p style="margin: 8px 0 0 0; font-size: 13px; color: #B0B0B0;">
+                <strong style="color: #D0D0D0;">Rocco Totaro</strong> - <a href="mailto:rt2959@columbia.edu" style="color: #FF6B6B; text-decoration: none; border-bottom: 1px solid rgba(255, 107, 107, 0.3); transition: all 0.3s ease;">rt2959@columbia.edu</a>
             </p>
-            <p style="margin: 5px 0 0 0; font-size: 11px; color: #999;">
-                Project: <a href="https://github.com/totarorocco/f1-strategy-simulator" style="color: #FF1801;" target="_blank">GitHub Repository</a>
+            <p style="margin: 8px 0 0 0; font-size: 12px; color: #909090;">
+                Project: <a href="https://github.com/totarorocco/f1-strategy-simulator" style="color: #FF6B6B; text-decoration: none; border-bottom: 1px solid rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" target="_blank">GitHub Repository</a>
             </p>
         </div>
         """,
