@@ -82,6 +82,25 @@ def main() -> None:
         # Demo mode
         display_demo_mode()
     
+    # Footer with credentials
+    st.markdown("---")
+    st.markdown(
+        """
+        <div style="text-align: center; padding: 20px; background-color: rgba(255, 24, 1, 0.1); border-radius: 10px; margin-top: 40px;">
+            <p style="margin: 0; font-size: 14px; color: #666;">
+                <strong>F1 Strategy Simulator</strong> | Built with ❤️ for Formula 1 fans and data enthusiasts
+            </p>
+            <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">
+                <strong>Rocco Totaro</strong> - <a href="mailto:rt2959@columbia.edu" style="color: #FF1801;">rt2959@columbia.edu</a>
+            </p>
+            <p style="margin: 5px 0 0 0; font-size: 11px; color: #999;">
+                Project: <a href="https://github.com/totarorocco/f1-strategy-simulator" style="color: #FF1801;" target="_blank">GitHub Repository</a>
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
     # Auto-refresh logic
     if auto_refresh and selected_session:
         time.sleep(refresh_interval)
